@@ -45,12 +45,21 @@ a {
     margin
 }
 .li-quantity{
-    width:5%;
+    width: 5%;
     text-align: center;
 }
 .li-bill{
     width:35%;
 }
+.li-bill button{
+    width: 2rem;
+    height: 2rem;
+    padding: 3px 0px;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
 .custom-bill{
     background-color: var(--white-color);
     border-top-left-radius: 7px;
@@ -88,12 +97,55 @@ a {
 .custom-table-infor{
  
 }
+.oder-quantity{
+    text-align: center;
+    border-width:0px;
+    border:none;
+    border-bottom: 0.5px solid #d2d4d6;
+    padding-bottom: 5px;
+}
+.btn-decrement-quantity{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 4px 0.5px;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    border-width:0px;
+}
+.btn-increment-quantity{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 4px 0.5px;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    border-width:0px;
+}
+
+#product-cost{
+    border: none;
+}
+
+.btn-order-choice{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 4px 0.5px;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    border-width:0px;
+}
+
+#product-cost{
+    border-bottom: 0.5px solid #d2d4d6;
+    padding-bottom: 5px;
+    text-align: right;
+}
 .custom-bill-infor{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height:100vh;
-   padding:10px;
-   
-
+   padding:10px;  
 
 }
 .total-item{
@@ -123,7 +175,10 @@ background-color:rgb(232,232,232);
 }
 .btn-bill{
     width:100%;
-    margin-top:110px
+    font-size: 1.5rem;
+    margin-top: 6rem;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .icon-remove{
@@ -131,4 +186,47 @@ background-color:rgb(232,232,232);
 }
 .custom-table{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.suggest-money{
+    height: 8.5rem;
+    width: 100%;
+    margin-top: 2rem;
+    overflow: hidden;
+    background-color: #eff2f5;
+    padding: 0.6rem 0.4rem 0rem 1rem;
+    border-radius: 8px;
+}
+.btn-suggest{
+    cursor: pointer;
+    margin: 0 0.6rem 0.6rem 0;
+    background-color: #fff;
+    width: 6rem;
+    padding:0 20px;
+    height: 3.2rem;
+    color: #111;
+    border-radius: 999px !important;
+    border: 0.5px solid #D6D7E1;
+}
+
+#customer-pay{
+    border: none;
+    width: 9rem;
+    border-bottom: 1.5px solid gray;
+    padding-bottom:5px;
+}
+
+.tranfer-money{
+    display: none;
+}
+.img_qr{
+    width:100%;
+    height:100%;
+
+
+}
+
+.add_acount{
+    width:100%;
+    border: 1px solid var(--main-color);
 }

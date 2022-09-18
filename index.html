@@ -1,179 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanh Toán</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Toán</title>
 
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-      <!-- Custom CSS -->
-      <link rel="stylesheet" href="style.css">
-            <!-- Custom Icon -->
-      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-      
-            <!-- Custom Icon -->
-            <script src="https://kit.fontawesome.com/0d49bb56e3.js" crossorigin="anonymous"></script>
-        </head>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Custom Icon -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- Custom Icon -->
+  <script src="https://kit.fontawesome.com/0d49bb56e3.js" crossorigin="anonymous"></script>
+</head>
+
 <body>
-    <ul class="nav custom-nav">
-        <li class="nav-item li-search mr-3">
-            <input type="text" name="search" placeholder="Tìm hàng hoá" class="form-boder form-search">
-        </li>
-        <li class="nav-item li-quantity">
-            <input type="text" name="search" class="form-boder form-search" placeholder="Số lượng">
-        </li>
-        <li class="nav-item li-bill">
-            <ul class="list-group list-group-horizontal  ">
-                <li class="custom-bill ml-3">Hoá đơn 1</li>
-                <li class="custom-bill">Hoá đơn 2</li>
-                <li class="custom-bill">Hoá đơn 2</li>
-
-              </ul>
-        </li>
-        <li class="nav-item li-icon">
-            <ul class="list-group list-group-horizontal  ">
-                <li class="custom-icon"><i class='bx bx-shopping-bag' ></i></li>
-                <li class="custom-icon"><i class='bx bx-reply' ></i></li>
-                <li class="custom-icon"><i class='bx bx-repeat' ></i></li>
-                <li class="custom-icon"><i class='bx bx-printer' ></i></li>
-
-              </ul>
-        </li>
-
-        <li class="nav-item li-infor ">
-            <ul class="list-group list-group-horizontal float-right">
-                <li class="color-white">0399617464</li>
-                <li class="custom-icon"><i class='bx bx-menu'></i></i></li>
-         
-
-              </ul>
-        </li>
+  <ul class="nav custom-nav">
+    <li class="nav-item li-search mr-3">
+      <input type="text" name="search" placeholder="Tìm hàng hoá" class="form-boder form-search">
+    </li>
+    <li class="nav-item li-quantity">
+      <input type="text" name="search" class="form-boder form-search" placeholder="Số lượng">
+    </li>
+    <li class="nav-item li-bill">
+      <ul class="list-group list-group-horizontal  ">
+        <li class="custom-bill ml-3">Hoá đơn 1</li>
+        <li class="custom-bill">Hoá đơn 2</li>
+        <li class="custom-bill">Hoá đơn 2</li>
+        <button class=""><i class="fa-solid fa-plus"></i></button>
       </ul>
+    </li>
+    <li class="nav-item li-icon">
+      <ul class="list-group list-group-horizontal  ">
+        <li class="custom-icon"><i class='bx bx-shopping-bag'></i></li>
+        <li class="custom-icon"><i class='bx bx-reply'></i></li>
+        <li class="custom-icon"><i class='bx bx-repeat'></i></li>
+        <li class="custom-icon"><i class='bx bx-printer'></i></li>
+
+      </ul>
+    </li>
+
+    <li class="nav-item li-infor ">
+      <ul class="list-group list-group-horizontal float-right">
+        <li class="color-white">0399617464</li>
+        <li class="custom-icon"><i class='bx bx-menu'></i></i></li>
 
 
-      <!-- main content -->
-     <div class="container-fluid main-bill">
+      </ul>
+    </li>
+  </ul>
+
+
+  <!-- main content -->
+  <div class="container-fluid main-bill">
+    <div class="row">
+      <div class="col-8  custom-table-infor">
+
+
+        <table class="table custom-table mt-2">
+
+          <tbody>
+            <tr>
+              <td><i class="fa-regular fa-trash-can"></i></td>
+              <td>Đần Độn</td>
+              <td>Con lợn nhựa ngu</td>
+              <td>
+                <button class="btn-decrement-quantity"><i class="fa-solid fa-minus"></i></button>
+                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="oder-quantity"
+                  class="oder-quantity" />
+                <button class="btn-increment-quantity"><i class="fa-solid fa-plus"></i></button>
+              </td>
+              <td><input type="text" name="cost" value="12000" id="product-cost" disabled></td>
+              <td><button class="btn-order-choice"><i class="fa-solid fa-plus"></i></button></td>
+              <td><button class="btn-order-choice"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+
+
+      </div>
+      <div class="col-4 custom-bill-infor">
+
+
+
         <div class="row">
-          <div class="col-8  custom-table-infor">
-          
+          <div class="col-12  ">
+            <input type="text" name="search" placeholder="Tìm khách hàng" class="mb-4 form-boder search-customer">
 
-            <table class="table custom-table mt-2" >
-        
-              <tbody>
-                <tr>
-                  <td><i class='bx bxs-message-alt-x icon-remove'></i></td>
-                  <td>Đần Độn</td>
-                  <td>Con lợn nhựa ngu</td>
-                  <td>
-                    <td>
-                      <input type="button"  class="btn-decrementValue" value="-" />
-    <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" class="number" />
-    <input type="button" class="btn-incrementValue"  value="+" /></td></td>
-
-
-                </tr>
-                <tr>
-                  <td><i class='bx bxs-message-alt-x icon-remove'></i></td>
-                  <td>Đần Độn</td>
-                  <td>Con lợn nhựa ngu</td>
-                  <td>
-                    <td>
-                      <input type="button"  class="btn-decrementValue" value="-" />
-    <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" class="number" />
-    <input type="button" class="btn-incrementValue"  value="+" /></td></td>
-
-
-                </tr>
-                <tr>
-                  <td><i class='bx bxs-message-alt-x icon-remove'></i></td>
-                  <td>Đần Độn</td>
-                  <td>Con lợn nhựa ngu</td>
-                  <td>
-                    <td>
-                      <input type="button"  class="btn-decrementValue" value="-" />
-    <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="number" class="number" />
-    <input type="button" class="btn-incrementValue"  value="+" /></td></td>
-
-
-                </tr>
-
-
-              </tbody>
-            </table>
-
+          </div>
+          <div class="col-8  ">
+            <p class="mb-4">Tổng tiền hàng <span class="total-item ml-3" id="total-order">4</span></p>
+            <p class="mb-4 ">Giảm giá</p>
+            <p class="mb-4 custom-text-bill">Khách cần trả</p>
+            <p class="mb-3 pt-3 custom-text-bill ">Khách thanh toán <i class='bx bx-credit-card ml-2'></i></p>
 
 
           </div>
-          <div class="col-4 custom-bill-infor">
-          
-
-           
-              <div class="row">
-                <div class="col-12  ">
-                    <input type="text" name="search" placeholder="Tìm khách hàng" class="mb-4 form-boder search-customer">
-
-                </div>
-                <div class="col-8  ">
-<p class="mb-4">Tổng tiền hàng <span class="total-item ml-3">4</span></p>
-<p class="mb-4 ">Giảm giá</p>
-<p class="mb-4 custom-text-bill">Khách cần trả</p>
-<p class="mb-4 custom-text-bill ">Khách thanh toán <i class='bx bx-credit-card ml-2' ></i></p>
-
-
-                </div>
-                  <div class="col-4 ">
-                    <p class="mb-4 text-right">4</p>
-                    <p class="mb-4 text-right line-bottom">0</p>
-                    <p class="mb-4 text-right">4</p>
-                    <p class="mb-4 text-right line-bottom">4</p>
-                </div>
-              </div>
-       <div class="col-12">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input custom-checkbox" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked/>
+          <div class="col-4 ">
+            <p class="mb-4 text-right" id="total-money">0</p>
+            <p class="mb-4 text-right line-bottom">0</p>
+            <p class="mb-4 text-right" id="need-to-pay">0</p>
+            <input type="text" maxlength="20" name="customer-pay" id="customer-pay" class="mb-4 p-1 text-right"
+              value="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input custom-checkbox" type="radio" name="inlineRadioOptions" id="cash"
+              value="cash" checked />
             <label class="form-check-label custom-checkbox-label" for="inlineRadio1">Tiền mặt</label>
           </div>
-          
+
           <div class="form-check form-check-inline">
-            <input class="form-check-input custom-checkbox" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+            <input class="form-check-input custom-checkbox" type="radio" name="inlineRadioOptions" id="transfer"
+              value="transfer" />
             <label class="form-check-label custom-checkbox-label" for="inlineRadio2">Chuyển khoản</label>
           </div>
-          
-        
-       </div>
 
 
-
-       <div class="col-12 mt-3">
-     
-        <ul class="list-group list-group-horizontal-xl">
-            <li class="list-group-item">1000</li>
-            <li class="list-group-item">2000</li>
-           <li class="list-group-item">3000</li>
-          </ul>
-          <ul class="list-group list-group-horizontal-xl">
-            <li class="list-group-item">1000</li>
-            <li class="list-group-item">2000</li>
-           <li class="list-group-item">3000</li>
-          </ul>
-        
-       </div>
-
-       <div class="col-12">
-     
-            <button type="button" class="btn btn-primary btn-bill">Thanh toán</button>
-
-       </div>
+        </div>
+<!-- suggest money -->
+        <div class="">
+          <div class="suggest-money">
+            <button class="btn-suggest">1000</button>
+            <button class="btn-suggest">2000</button>
+            <button class="btn-suggest">3000</button>
+            <button class="btn-suggest">4000</button>
+            <button class="btn-suggest">5000</button>
+            <button class="btn-suggest">6000</button>
           </div>
-        
+        </div>
+<!-- transfer money -->
+        <div class="col-12 mt-3 tranfer-money">
+          <div class="row">
+            <div class="col-3">
+              <img src="https://vi.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/basic_market/generator/dist/generator/assets/images/websiteQRCode_noFrame.png" alt="" class="img_qr">
+            </div>
+            <div class="col-9">
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Sacombank-030047139480-Nguyễn Viết Thắng</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <button type="button" class="btn btn-light add_acount mt-2">Thêm tài khoản</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="row mt-3">
+          <p class="col-8">Tiền thừa trả khách:</p>
+          <p class="col-4 text-right" id="excess-money">0</p>
+        </div>
+        <div class="col-12">
+          <button type="button" class="btn btn-primary btn-bill">Thanh toán</button>
         </div>
       </div>
 
+    </div>
+  </div>
 
-      <script src="./index.js"></script>
+
+  <script src="./index.js"></script>
 </body>
-</html>
 
+</html>
