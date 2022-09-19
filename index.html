@@ -65,24 +65,40 @@
   <div class="container-fluid main-bill">
     <div class="row">
       <div class="col-8  custom-table-infor">
-
-
+        <!-- order product -->
         <table class="table custom-table mt-2">
-
           <tbody>
             <tr>
-              <td><i class="fa-regular fa-trash-can"></i></td>
-              <td>Đần Độn</td>
-              <td>Con lợn nhựa ngu</td>
-              <td>
-                <button class="btn-decrement-quantity"><i class="fa-solid fa-minus"></i></button>
-                <input type="text" name="quantity" value="1" maxlength="2" max="10" size="1" id="oder-quantity"
-                  class="oder-quantity" />
-                <button class="btn-increment-quantity"><i class="fa-solid fa-plus"></i></button>
-              </td>
-              <td><input type="text" name="cost" value="12000" id="product-cost" disabled></td>
-              <td><button class="btn-order-choice"><i class="fa-solid fa-plus"></i></button></td>
-              <td><button class="btn-order-choice"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+              <div class="choose-product">
+                <td><i class="fa-regular fa-trash-can remove-product"></i></td>
+                <td>SP1</td>
+                <td>Con lợn nhựa ngu</td>
+                <td>
+                  <button class="btn-decrement-quantity"><i class="fa-solid fa-minus"></i></button>
+                  <input type="text" name="quantity" value="1" maxlength="3" max="10" size="1" 
+                    class="oder-quantity" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                  <button class="btn-increment-quantity"><i class="fa-solid fa-plus"></i></button>
+                </td>
+                <td><input type="text" name="cost" value="12000" class="product-cost"  disabled></td>
+                <td class="pt-3"><b class="sum-cost">12000</b></td>
+                <td><button class="btn-order-choice"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+              </div>
+            </tr>
+            <tr>
+              <div class="choose-product">
+                <td><i class="fa-regular fa-trash-can remove-product"></i></td>
+                <td>SP2</td>
+                <td>Con lợn đất ngu</td>
+                <td>
+                  <button class="btn-decrement-quantity"><i class="fa-solid fa-minus"></i></button>
+                  <input type="text" name="quantity" value="1" maxlength="3" max="10" size="1" 
+                    class="oder-quantity" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+                  <button class="btn-increment-quantity"><i class="fa-solid fa-plus"></i></button>
+                </td>
+                <td><input type="text" name="cost" value="5000" class="product-cost" disabled></td>
+                <td class="pt-3"><b class="sum-cost">5000</b></td>
+                <td><button class="btn-order-choice"><i class="fa-solid fa-ellipsis-vertical"></i></button></td>
+              </div>
             </tr>
 
           </tbody>
@@ -101,7 +117,7 @@
 
           </div>
           <div class="col-8  ">
-            <p class="mb-4">Tổng tiền hàng <span class="total-item ml-3" id="total-order">4</span></p>
+            <p class="mb-4">Tổng tiền hàng <span class="total-item ml-3" id="total-order">0</span></p>
             <p class="mb-4 ">Giảm giá</p>
             <p class="mb-4 custom-text-bill">Khách cần trả</p>
             <p class="mb-3 pt-3 custom-text-bill ">Khách thanh toán <i class='bx bx-credit-card ml-2'></i></p>
@@ -120,7 +136,7 @@
           <div class="form-check form-check-inline">
             <input class="form-check-input custom-checkbox" type="radio" name="inlineRadioOptions" id="cash"
               value="cash" checked />
-            <label class="form-check-label custom-checkbox-label" for="inlineRadio1">Tiền mặt</label>
+            <label class="form-check-label custom-checkbox-label mr-2" for="inlineRadio1">Tiền mặt</label>
           </div>
 
           <div class="form-check form-check-inline">
@@ -131,7 +147,7 @@
 
 
         </div>
-<!-- suggest money -->
+        <!-- suggest money -->
         <div class="">
           <div class="suggest-money">
             <button class="btn-suggest">1000</button>
@@ -142,11 +158,13 @@
             <button class="btn-suggest">6000</button>
           </div>
         </div>
-<!-- transfer money -->
+        <!-- transfer money -->
         <div class="col-12 mt-3 tranfer-money">
           <div class="row">
             <div class="col-3">
-              <img src="https://vi.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/basic_market/generator/dist/generator/assets/images/websiteQRCode_noFrame.png" alt="" class="img_qr">
+              <img
+                src="https://vi.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/basic_market/generator/dist/generator/assets/images/websiteQRCode_noFrame.png"
+                alt="" class="img_qr">
             </div>
             <div class="col-9">
               <select class="custom-select" id="inputGroupSelect01">

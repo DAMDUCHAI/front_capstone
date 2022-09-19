@@ -45,7 +45,7 @@ a {
     margin
 }
 .li-quantity{
-    width: 5%;
+    width: 10px;
     text-align: center;
 }
 .li-bill{
@@ -78,6 +78,11 @@ a {
     display:felex
 }
 
+.sum-cost{
+}
+.remove-product{
+    cursor: pointer;
+}
 .custom-infor{
     color:var(--white-color);
     font-size: 20px;
@@ -94,9 +99,7 @@ a {
 .custom-main{
     width:100%;
 }
-.custom-table-infor{
- 
-}
+
 .oder-quantity{
     text-align: center;
     border-width:0px;
@@ -104,12 +107,15 @@ a {
     border-bottom: 0.5px solid #d2d4d6;
     padding-bottom: 5px;
 }
+
+.fa-minus{
+    font-size: 110%;
+}
 .btn-decrement-quantity{
     width: 1.5rem;
     height: 1.5rem;
     padding: 4px 0.5px;
     border-radius: 1rem;
-    font-size: 1rem;
     text-align: center;
     border-width:0px;
 }
@@ -118,14 +124,11 @@ a {
     height: 1.5rem;
     padding: 4px 0.5px;
     border-radius: 1rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
     border-width:0px;
 }
 
-#product-cost{
-    border: none;
-}
 
 .btn-order-choice{
     width: 1.5rem;
@@ -137,7 +140,8 @@ a {
     border-width:0px;
 }
 
-#product-cost{
+.product-cost{
+    border: none;
     border-bottom: 0.5px solid #d2d4d6;
     padding-bottom: 5px;
     text-align: right;
@@ -145,8 +149,7 @@ a {
 .custom-bill-infor{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height:100vh;
-   padding:10px;  
-
+    padding:10px;  
 }
 .total-item{
 padding:2px 8px;
@@ -218,6 +221,9 @@ background-color:rgb(232,232,232);
 
 .tranfer-money{
     display: none;
+    height: 8.5rem;
+    width: 100%;
+    margin-top: 2rem;
 }
 .img_qr{
     width:100%;
