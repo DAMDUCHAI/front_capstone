@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="payment.css">
+    <!-- Custom Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="manage-product.js" defer></script>
+</head>
+</head>
+
+<body>
+    <main class="app-content">
+        <div class="app-title">
+            <ul class="app-breadcrumb breadcrumb side">
+                <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/admin/products">Quản lý sản
+                        phẩm</a></li>
+                <li class="breadcrumb-item active">Thêm sản phẩm</li>
+            </ul>
+            <div id="clock"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <h3 class="tile-title">Thêm sản phẩm mới</h3>
+                    <div class="tile-body">
+                        <form id="updateProduct">
+                            <input type="hidden" id="productId" value="${productDto.id}">
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label class="control-label required-field">Tên sản phẩm</label>
+                                    <input class="form-control" id="name" type="text" value=""
+                                        required>
+                                    <span class="error" id="errorProductName"></span>
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label class="control-label required-field">Giá bán</label>
+                                    <input class="form-control" id="price" type="number" value="${productDto.price}"
+                                        onchange="isPricePositive()" required>
+                                    <p class="error" id="negativePrice"></p>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="control-label required-field">Giá vốn</label>
+                                    <input class="form-control" id="price" type="number" value="${}"
+                                        onchange="isPricePositive()" required>
+                                    <p class="error" id="negativePrice"></p>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label class="control-label required-field">Tồn kho</label>
+                                    <input class="form-control" id="price" type="number" value="${}"
+                                        onchange="isPricePositive()" required>
+                                    <p class="error" id="negativePrice"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-3">
+                                    <label class="control-label required-field">Số lượng có sẵn</label>
+                                    <input class="form-control" id="available" type="number"
+                                        value="${productDto.available}" onchange="isAvailablePositive()" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="exampleSelect1" class="control-label required-field">Danh mục</label>
+                                    <select class="form-control" id="categoryOption" required>
+                                        <option value="-1" disabled selected>--Chọn danh mục--</option>
+                                        <option value="dm1">Dm 1</option>
+                                        <option value="dm2">Dm 2</option>
+                                        <option value="dm3">Dm 3</option>
+                                        <option value="dm4">Dm 4</option>
+                                        <option value="dm5">Dm 5</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <button class="side-button btn btn-add mt-4" type="button" title="Thêm vào danh mục"
+                                        onclick="addToCategoryTable()">Thêm vào danh mục</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label class="control-label">Bảng danh mục</label>
+                                    <table id="categoryTable" class="table table-hover table-bordered js-copytextarea"
+                                        cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th width="200">Mã danh mục</th>
+                                                <th width="300">Tên danh mục</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                              
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-7">
+                                    <label for="exampleSelect1" class="control-label">Bảng thông số kỹ thuật</label>
+                                    <table id="specTable" class="table table-hover table-bordered js-copytextarea"
+                                        cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th width="200">Mã thông số kỹ thuật</th>
+                                                <th width="200">Thông số kỹ thuật</th>
+                                                <th width="400">Giá trị</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="control-label required-field">Ảnh sản phẩm</label>
+                                    <div id="myfileupload">
+                                        <input type="file" id="uploadfile" name="ImageUpload"
+                                            onchange="setThumbImage();" accept="image/*" />
+                                    </div>
+                                    <div id="thumbbox">
+                                        <img height="450" width="400" alt="Thumb image" id="thumbimage"
+                                            style="display: none" />
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="control-label">Mô tả sản phẩm</label>
+                                    <textarea class="form-control" name="mota" id="mota"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="confirm-button">
+                                    <div class="button">
+                                        <button type="submit" id="createProduct" class="btn btn-success">Lưu lại</button>
+                                        <button type="button" class="btn btn-danger"
+                                            onclick="location.href='product-management.html'">Hủy
+                                            bỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

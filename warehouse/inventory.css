@@ -1,0 +1,28 @@
+body{
+    background-color: #f2f2f0  ;
+}
+
+.heading-page{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.boxLeft{
+    margin-bottom: 15px;
+    background-color: #fff;
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+}
+
+.line-under{
+    border: none;
+    border-bottom: 0.5px solid #d2d4d6;
+    padding-bottom: 3px;
+}
+
+.fa-solid{
+    cursor: pointer;
+}
+  

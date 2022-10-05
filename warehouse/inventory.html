@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="payment.css">
+    <!-- Custom Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="inventory.css">
+    <script src="inventory.js" defer></script>
+</head>
+
+<body>
+    <div class="m-5">
+        <div class="row">
+            <div class="col-2">
+                <h1 class="heading-page mt-2">Phiếu kiểm kho</h1>
+                <div class="boxLeft mt-5">
+                    <h5>Thời gian</h5>
+                    <div class="form-check my-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="thisMonth">
+                        <label class="form-check-label d-flex justify-content-between line-under" for="thisMonth">
+                            <span>Tháng này</span>
+                            <i class="fa-solid fa-sort pt-1"></i>
+                        </label>
+                    </div>
+                    <div class="form-check my-3 input-with-post-icon datepicker">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="otherChoices">
+                        <label class="form-check-label d-flex justify-content-between line-under" for="otherChoices">
+                            <span>Lựa chọn khác</span>
+                            <i class="fa-solid fa-calendar-days pt-1 input-prefix" tabindex=0></i>
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="boxLeft mt-3 py-4">
+                    <h5>Người tạo</h5>
+                    <input type="text" class="line-under mt-2" name="cus-name" list="pname" style="width: 95%;"
+                        placeholder="Chọn người tạo">
+                    <datalist id="pname">
+                        <option value="Long">
+                        <option value="Hải">
+                        <option value="Thắng">
+                    </datalist>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="search-box">
+                    <div class="input-group" style="width: 50%;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Theo mã phiếu kiểm"
+                            aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mt-5 table-bordered " id="inventory-table" style="width: 100%;">
+                        <thead class="thead" style="background-color: #c2ffc2;">
+                            <tr>
+                                <th scope="col">Mã kiểm kho</th>
+                                <th scope="col">Thời gian</th>
+                                <th scope="col">Ngày cân bằng</th>
+                                <th scope="col">SL thực tế</th>
+                                <th scope="col">Tổng thực tế</th>
+                                <th scope="col">Tổng chênh lệch</th>
+                                <th scope="col">SL lệch tăng</th>
+                                <th scope="col">SL lệch giảm</th>
+                                <th scope="col">Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: white;">
+                            <tr>
+                                <th scope="row">KK000001</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">KK000002</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">KK000003</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">KK000004</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                            </tr>
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <section class="container">
+        <h2 class="py-2">Datepicker in Bootstrap 5</h2>
+        <form class="row">
+          <label for="date" class="col-1 col-form-label">Date</label>
+          <div class="col-5">
+            <div class="input-group date" id="datepicker">
+              <input type="text" class="form-control" id="date"/>
+              <span class="input-group-append">
+                <span class="input-group-text bg-light d-block">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </span>
+            </div>
+          </div>
+        </form>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
