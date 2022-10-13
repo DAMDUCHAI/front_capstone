@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="payment.css">
+    <!-- Custom Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="inventory.css">
+    <script src="inventory.js" defer></script>
+    <style>
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="info d-flex justify-content-between">
+            <div class="info-left d-flex">
+                <div class="label mr-2">
+                    <p>Mã kiểm kho:</p>
+                    <p>Thời gian:</p>
+                    <p>Ngày cân bằng:</p>
+                </div>
+                <div class="label-info">
+                    <p><strong>KK000001</strong></p>
+                    <p>04/10/2022 23:57</p>
+                    <p>04/10/2022 23:57</p>
+                </div>
+            </div>
+            <div class="info-right d-flex">
+                <div class="label mr-2">
+                    <p>Trạng thái:</p>
+                    <p>Người tạo:</p>
+                    <p>Người cân bằng:</p>
+                </div>
+                <div class="label-info">
+                    <p>Đã cân bằng kho</p>
+                    <p>Daniel Phan</p>
+                    <p>Daniel Phan</p>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-striped mt-3">
+            <thead style="background-color: #5FB55F; color: white;">
+                <tr>
+                    <th scope="col">Mã hàng</th>
+                    <th scope="col">Tên hàng</th>
+                    <th scope="col">Tồn kho</th>
+                    <th scope="col">Thực tế</th>
+                    <th scope="col">SL lệch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@fat</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="count mt-2 d-flex justify-content-end">
+            <table>
+                <tr>
+                    <td style="width:150px;">Số lượng thực tế:</td>
+                    <td style="width:100px; text-align: right;">15</td>
+                </tr>
+                <tr>
+                    <td style="width:150;">Số lượng lệch tăng:</td>
+                    <td style="width:100px; text-align: right;">3</td>
+                </tr>
+                <tr>
+                    <td style="width:150;">Số lượng lệch giảm:</td>
+                    <td style="width:100px; text-align: right;">0</td>
+                </tr>
+                <tr>
+                    <td style="width:150;">Số lượng chênh lệch:</td>
+                    <td style="width:100px; text-align: right;">3</td>
+                </tr>
+            </table>
+        </div>
+        <div class="buttons mt-5 text-center">
+            <button class="btn btn-success mr-2"><i class="fa-solid fa-floppy-disk mr-2"></i>Lưu</button>
+            <button class="btn btn-danger"><i class="fa-solid fa-trash-can mr-2"></i>Hủy bỏ</button>
+        </div>
+    </div>
+</body>
+
+</html>

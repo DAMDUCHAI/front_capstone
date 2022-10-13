@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <!-- Custom Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="inventory.css">
+    <script src="inventory.js" defer></script>
+
+
+
+
+    <!--  jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+    <style>
+        .bootstrap-iso .formden_header h2,
+        .bootstrap-iso .formden_header p,
+        .bootstrap-iso form {
+            font-family: Arial, Helvetica, sans-serif;
+            color: black
+        }
+
+        .bootstrap-iso form button,
+        .bootstrap-iso form button:hover {
+            color: white !important;
+        }
+
+        .asteriskField {
+            color: red;
+        }
+    </style>
+
+    <link type="text/css" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/alumuko/vanilla-datetimerange-picker@latest/dist/vanilla-datetimerange-picker.css">
+
+
+</head>
+
+<body>
+    <div class="m-5">
+        <div class="row">
+            <div class="col-2">
+                <h1 class="heading-page mt-2">Phiếu kiểm kho</h1>
+                <div class="boxLeft mt-5">
+                    <h5>Thời gian</h5>
+                    <div class="form-check my-3">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="thisMonth">
+                        <label class="form-check-label d-flex justify-content-between line-under" for="thisMonth">
+                            <span>Tháng này</span>
+                            <i class="fa-solid fa-sort pt-1 btn-time"></i>
+                        </label>
+                    </div>
+                    <div class="form-check my-3 ">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="otherChoices">
+                        <label class="form-check-label d-flex justify-content-between line-under" for="otherChoices">
+                            <span>Lựa chọn khác</span>
+                            <i class="fa-solid fa-calendar-days pt-1 input-prefix choose-date" tabindex=0></i>
+                        </label>
+                    </div>
+
+                </div>
+                <div class="boxLeft mt-3 py-4">
+                    <h5>Người tạo</h5>
+                    <input type="text" class="line-under mt-2" name="cus-name" list="pname" style="width: 95%;"
+                        placeholder="Chọn người tạo">
+                    <datalist id="pname">
+                        <option value="Long">
+                        <option value="Hải">
+                        <option value="Thắng">
+                    </datalist>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="search-box">
+                    <div class="input-group" style="width: 50%;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Theo mã phiếu kiểm"
+                            aria-label="Input group example" aria-describedby="btnGroupAddon">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table mt-5 table-bordered " id="inventory-table" style="width: 100%;">
+                        <thead class="thead" style="background-color: #c2ffc2;">
+                            <tr>
+                                <th scope="col">Mã kiểm kho</th>
+                                <th scope="col">Thời gian</th>
+                                <th scope="col">Ngày cân bằng</th>
+                                <th scope="col">SL thực tế</th>
+                                <th scope="col">Tổng thực tế</th>
+                                <th scope="col">Tổng chênh lệch</th>
+                                <th scope="col">SL lệch tăng</th>
+                                <th scope="col">SL lệch giảm</th>
+                                <th scope="col">Ghi chú</th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: white;">
+                            <tr>
+                                <th scope="row">KK000001</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                                <td> <a href="http://127.0.0.1:5500/inventory-view.html"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th scope="row">KK000002</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                                <td> <a href="http://127.0.0.1:5500/inventory-view.html"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">KK000003</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                                <td> <a href="http://127.0.0.1:5500/inventory-view.html"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">KK000004</th>
+                                <td>04/10/2022 23:57</td>
+                                <td>04/10/2022 23:57</td>
+                                <td>15</td>
+                                <td>210,000,000</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>0</td>
+                                <td>Phiếu kiểm kho được tạo tự động khi cập nhật Hàng hóa:TBDCN0099</td>
+                                <td> <a href="http://127.0.0.1:5500/inventory-view.html"><i class="fa-solid fa-eye"></i></a>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- hiển thị time  -->
+    <div class="time-popup hide">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    Theo ngày
+                    <a href="#">Hôm nay</a><br />
+                    <a href="#">Hôm qua</a>
+
+                </div>
+                <div class="col-2">
+
+                    Theo tuần
+                    <a href="#">Tuần này</a><br />
+                    <a href="#">Tuần trước</a><br />
+
+                </div>
+                <div class="col-2">
+                    Theo tháng
+                    <a href="#">Tháng này</a><br />
+                    <a href="#">Tháng trước</a><br />
+                </div>
+                <div class="col-2">
+                    Theo quý
+                    <br />
+                    <a href="#">Quý này</a><br />
+                    <a href="#">Quý trước</a><br />
+
+                </div>
+                <div class="col-2">
+                    Theo năm
+                    <a href="#">Năm này</a><br />
+                    <a href="#">Năm trước</a><br />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- hiển thị calendar  -->
+
+    <input type="text" id="datetimerange-input1" class="calendar-popup hide" size="24" style="text-align:center">
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" type="text/javascript"></script>
+    <script
+        src="https://cdn.jsdelivr.net/gh/alumuko/vanilla-datetimerange-picker@latest/dist/vanilla-datetimerange-picker.js"></script>
+    <script>
+        window.addEventListener("load", function (event) {
+            new DateRangePicker('datetimerange-input1',
+                {
+                    locale: {
+                        format: "DD-MM-YYYY",
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>
