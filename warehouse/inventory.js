@@ -3,27 +3,23 @@ const modal = document.querySelector('.time-popup')
 
 const btnChooseDate = document.querySelector('.choose-date')
 const modalCalendar = document.querySelector('.calendar-popup')
-var checkTime= false;
-var checkCalendar= false;
+
 
 function toggleModal() {
-	modal.classList.toggle('hide');
-    checkTime=!checkTime
-    
-    if(checkCalendar==true){
-        modalCalendar.classList.add("hide");
+	   modal.classList.toggle('hide');
+    modalCalendar.classList.add("hide");
 
-    }
+
 }
 
 function toggleModalCalendar() {
 	modalCalendar.classList.toggle('hide')
-    checkCalendar=!checkCalendar
-    if(checkTime==true){
-        modal.classList.add("hide");
+    modal.classList.add("hide");
 
-    }
+
 }
+
+
 
 btntimePopup.addEventListener('click', toggleModal)
 btnChooseDate.addEventListener('click', toggleModalCalendar)
@@ -39,3 +35,4 @@ $(document).ready(function(){
     };
     date_input.datepicker(options);
   })
+
