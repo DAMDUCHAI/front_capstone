@@ -4,6 +4,10 @@ const modal = document.querySelector('.time-popup')
 const btnChooseDate = document.querySelector('.choose-date')
 const modalCalendar = document.querySelector('.calendar-popup')
 
+const thisMonth = document.querySelector('#thisMonth')
+const otherChoices = document.querySelector('#otherChoices')
+
+
 
 function toggleModal() {
 	   modal.classList.toggle('hide');
@@ -23,6 +27,8 @@ function toggleModalCalendar() {
 
 btntimePopup.addEventListener('click', toggleModal)
 btnChooseDate.addEventListener('click', toggleModalCalendar)
+thisMonth.addEventListener('click', toggleModal)
+otherChoices.addEventListener('click', toggleModalCalendar)
 
 $(document).ready(function(){
     var date_input=$('input[name="date"]'); //our date input has the name "date"
